@@ -1,36 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nebula HUD - Command Center</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hud-container">
+      <header class="hud-header">
+        <div class="system-status">
+          <span class="pulse-dot"></span> SYSTEM: ONLINE
+        </div>
+        <div id="clock" class="digital-clock">00:00:00</div>
+      </header>
 
-    <div class = "hud-container">
+      <main class="hud-grid">
+        <div class="widget card-large" id="main-display">
+          <h2 class="widget-label">BIOMETRIC SCAN</h2>
+          <div class="visualizer"></div>
+        </div>
 
-        <header class="hud-header">
-            <div class="system-status">
-                <span class="pulse-dot"></span> SYSTEM: ONLINE
+        <div class="widget card-small">
+          <h2 class="widget-label">SYSTEM RESOURCES</h2>
+          <div class="stat-row">
+            <span>CPU</span>
+            <div class="progress-bar">
+              <div id="cpu-bar" class="progress-fill"></div>
             </div>
-            <div id="clock" class="digital-clock">00:00:00</div>
-        </header>
+          </div>
+          <div class="stat-row">
+            <span>MEM</span>
+            <div class="progress-bar">
+              <div id="mem-bar" class="progress-fill"></div>
+            </div>
+          </div>
+        </div>
 
-        <main class="hud-grid">
-            <div class="widget card-large">Primary Viewport</div>
-            <div class="widget card-small">Network</div>
-            <div class="widget card-small">Resources</div>
-            <div class="widget card-medium">Terminal Logs</div>
-        </main>
+        <div class="widget card-medium">
+          <h2 class="widget-label">TERMINAL_LOGS</h2>
+          <div id="log-container" class="log-stream"></div>
+        </div>
+      </main>
 
-        <footer class="hud-footer">
-            <input type="text" id="cmd-input" placeholder="ENTER COMMAND..." autofocus>
-        </footer>
-
+      <footer class="hud-footer">
+        <input
+          type="text"
+          id="cmd-input"
+          placeholder="ENTER COMMAND..."
+          autofocus
+        />
+      </footer>
     </div>
 
     <script src="script.js"></script>
-    
-</body>
+  </body>
 </html>
