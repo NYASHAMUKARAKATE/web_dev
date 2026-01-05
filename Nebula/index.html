@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula HUD - Command Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class = "hud-container">
+
+        < class="hud-header">
+            <div class="system-status">
+                <span class="pulse-dot"></span> SYSTEM: ONLINE
+            </div>
+            <div id="clock" class="digital-clock">00:00:00</div>
+        </header>
+
+        <main class="hud-grid">
+            <div class="widget card-large">Primary Viewport</div>
+            <div class="widget card-small">Network</div>
+            <div class="widget card-small">Resources</div>
+            <div class="widget card-medium">Terminal Logs</div>
+        </main>
+
+        <footer class="hud-footer">
+            <input type="text" id="cmd-input" placeholder="ENTER COMMAND..." autofocus>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
