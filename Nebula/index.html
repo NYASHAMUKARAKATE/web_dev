@@ -12,27 +12,73 @@
         <div class="system-status">
           <span class="pulse-dot"></span> SYSTEM: ONLINE
         </div>
+        <div class="connection-indicator">
+          <span class="status-icon"></span>
+          <span id="connection-status">LIVE DATA ACTIVE</span>
+        </div>
         <div id="clock" class="digital-clock">00:00:00</div>
       </header>
 
       <main class="hud-grid">
         <div class="widget card-large" id="main-display">
-          <h2 class="widget-label">BIOMETRIC SCAN</h2>
-          <div class="visualizer"></div>
+          <h2 class="widget-label">ENVIRONMENTAL DATA</h2>
+          <div class="visualizer">
+            <div class="data-grid">
+              <div class="data-point">
+                <div class="data-label">LOCATION</div>
+                <div class="data-value" id="location">--</div>
+              </div>
+              <div class="data-point">
+                <div class="data-label">TEMPERATURE</div>
+                <div class="data-value" id="temperature">--°C</div>
+              </div>
+              <div class="data-point">
+                <div class="data-label">CONDITIONS</div>
+                <div class="data-value" id="conditions">--</div>
+              </div>
+              <div class="data-point">
+                <div class="data-label">HUMIDITY</div>
+                <div class="data-value" id="humidity">--%</div>
+              </div>
+              <div class="data-point">
+                <div class="data-label">WIND SPEED</div>
+                <div class="data-value" id="wind">-- km/h</div>
+              </div>
+              <div class="data-point">
+                <div class="data-label">PRESSURE</div>
+                <div class="data-value" id="pressure">-- hPa</div>
+              </div>
+            </div>
+            <div class="chart-container" id="temp-chart"></div>
+          </div>
         </div>
 
         <div class="widget card-small">
-          <h2 class="widget-label">SYSTEM RESOURCES</h2>
+          <h2 class="widget-label">NETWORK METRICS</h2>
           <div class="stat-row">
-            <span>CPU</span>
+            <span
+              >LATENCY
+              <span class="stat-value" id="latency-val">-- ms</span></span
+            >
             <div class="progress-bar">
-              <div id="cpu-bar" class="progress-fill"></div>
+              <div id="latency-bar" class="progress-fill"></div>
             </div>
           </div>
           <div class="stat-row">
-            <span>MEM</span>
+            <span
+              >UPTIME <span class="stat-value" id="uptime-val">--</span></span
+            >
             <div class="progress-bar">
-              <div id="mem-bar" class="progress-fill"></div>
+              <div id="uptime-bar" class="progress-fill"></div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <span
+              >REQUESTS
+              <span class="stat-value" id="requests-val">--</span></span
+            >
+            <div class="progress-bar">
+              <div id="requests-bar" class="progress-fill"></div>
             </div>
           </div>
         </div>
@@ -47,7 +93,7 @@
         <input
           type="text"
           id="cmd-input"
-          placeholder="ENTER COMMAND..."
+          placeholder="ENTER COMMAND... (try: help, status, weather, clear)"
           autofocus
         />
       </footer>
