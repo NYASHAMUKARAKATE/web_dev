@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graphite Dreams - Pencil Art Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="paper-texture"></div>
+
+    <header>
+      <h1>GRAPHITE DREAMS</h1>
+      <p class="subtitle">A Collection of Pencil Artistry</p>
+    </header>
+
+    <nav class="nav">
+      <button class="nav-btn active" onclick="filterGallery('all')">
+        ALL WORKS
+      </button>
+      <button class="nav-btn" onclick="filterGallery('portraits')">
+        PORTRAITS
+      </button>
+      <button class="nav-btn" onclick="filterGallery('landscapes')">
+        LANDSCAPES
+      </button>
+      <button class="nav-btn" onclick="filterGallery('abstract')">
+        ABSTRACT
+      </button>
+    </nav>
+
+    <div class="gallery-container">
+      <div class="gallery-grid" id="gallery">
+        <!-- Gallery items will be inserted here -->
+      </div>
+    </div>
+
+    <div class="modal" id="modal">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <div class="modal-content">
+        <div class="modal-image">
+          <div class="sketch-icon">✎</div>
+        </div>
+        <div class="modal-info">
+          <h2 id="modal-title"></h2>
+          <p id="modal-description"></p>
+          <p id="modal-details"></p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 Graphite Dreams Gallery | All Rights Reserved</p>
+    </footer>
+  </body>
+</html>
